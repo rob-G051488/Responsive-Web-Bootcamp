@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+p,
+h2 {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 18px;
+}
+
+a {
+  color: #ffe600;
+}
+
+header,
+section {
+  padding: 50px;
+}
+
+header {
+  background: #ffe600;
+  color: #000;
+}
+
+.section-one {
+  background: black;
+  color: white;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-accent {
+  background: #ffe600;
+  color: black;
+}
+
+.btn-accent:hover {
+  background: white;
+}
+
+.btn-dark {
+  background: #000;
+  color: #fff;
+}
+
+.btn-dark:hover {
+  background: #ffe600;
+  color: black;
+}
