@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet"> 
     <title>Navigation</title>
 </head>
 <body>
     <header>
 
-        <div class="container container-nav">
+        <div class="container container-flex">
             <div>
                 <h1 class="title">Living the simple life</h1>
                 <p class="subtitle">
@@ -33,7 +35,7 @@
     </header>
     
 
-        <div class="container">
+        <div class="container container-flex">
             <main role="main">
 
                 <article class="article-feateured">
@@ -94,9 +96,34 @@
             </main>
 
 
-            <aside class="sidebar"></aside>
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h2 class="widget-title">About me</h2>
+                    <img src="./images/about-me.jpg" alt="Profile Photo" class="widget-image">
+                    <p class="widget-body">I find life better, and I'm happier, when things are nice and simple.</p>
+                </div>
 
-        </div>
+                <div class="sidebar-widget">
+                    <h2 class="widget-title">Recent posts</h2>
+
+                    <div class="recent-post">
+                        <h3 class="widget-recent-post-title">Keeping cooking simple</h3>
+                        <img src="./images/food.jpg" alt="food" class="widget-image">
+                    </div>
+
+                    <div class="recent-post">
+                        <h3 class="widget-recent-post-title">Simplicity and work</h3>
+                        <img src="./images/work.jpg" alt="desk facing a white wall" class="widget-image">
+                    </div>
+
+                    <div class="recent-post">
+                        <h3 class="widget-recent-post-title">Simple decorations</h3>
+                        <img src="./images/deco.jpg" alt="plant decoration" class="widget-image">
+                    </div>
+                </div>
+            </aside>
+
+        </div>   <!-- / .container main-section -->
    
    
      
