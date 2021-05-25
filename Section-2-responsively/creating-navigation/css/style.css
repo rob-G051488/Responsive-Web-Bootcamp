@@ -1,19 +1,81 @@
 body {
+  font-size: 1.125rem;
+  font-weight: 300;
   margin: 0;
   padding: 0;
   font-family: "Ubuntu", sans-serif;
+  color: #707070;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.article-secondary-image {
+  width: 100%;
+  min-height: 250px;
+  object-fit: cover;
+}
+
+.image-full {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-bottom: 2.5em;
 }
 
 /*==============
 Typography
 =================*/
 
-.title {
-  font-family: "Lora", serif;
+.title,
+.article-title,
+.widget-recent-post-title {
   font-weight: 400;
+  font-family: "Lora", serif;
+  margin-top: 0;
+  color: #143774;
+}
+
+h3 {
+  color: #1792d2;
+}
+
+h2 {
+  color: #143774;
+  font-family: "Lora", serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.title {
   font-size: 2rem;
   margin: 0;
+}
+
+.article-title,
+.widget-recent-post-title {
+  font-size: 1.5rem;
+}
+
+.subtitle,
+.continue-reading {
+  color: #1792d2;
+}
+
+.article-featured-link {
+  color: #1792d2;
+}
+
+.article-featured-link:hover,
+.article-featured-link:focus {
+  font-weight: 700;
   color: #143774;
+}
+
+strong {
+  font-weight: 700;
 }
 
 .subtitle {
@@ -21,8 +83,52 @@ Typography
   font-weight: 700;
   margin: 0;
   text-transform: uppercase;
-  color: #1792d2;
   letter-spacing: 0.1rem;
+}
+
+.widget-title {
+  color: #143774;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.article-info {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.article-body {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.continue-reading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.continue-reading:hover,
+.continue-reading:focus {
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.article-info {
+  margin: 2em 0;
+}
+
+.widget-title {
+  font-size: 1rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+}
+
+.widget-recent-post-title {
+  font-size: 1rem;
+  margin-bottom: 0;
 }
 
 /* ==============
@@ -32,6 +138,8 @@ Layout
 header {
   padding: 2em;
   background-color: #f8f8f8;
+  text-align: center;
+  margin-bottom: 3em;
 }
 
 .container {
@@ -40,9 +148,36 @@ header {
   margin: 0 auto;
 }
 
-.container-nav {
+.container-flex {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+}
+
+@media (min-width: 675px) {
+  .container-flex {
+    flex-direction: row;
+  }
+
+  .main {
+    width: 70%;
+  }
+
+  .sidebar {
+    width: 25%;
+    min-width: 200px;
+    margin-left: 1em;
+  }
+}
+
+@media (max-width: 675px) {
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-list-item {
+    margin: 0.5em 0;
+  }
 }
 
 /*==========
@@ -77,52 +212,98 @@ Navigation
   color: #1792d2;
 }
 
-@media (max-width: 675px) {
-  .container-nav {
-    flex-direction: column;
-  }
+/* =============
+Article
+================= */
 
-  header {
-    text-align: center;
-  }
-
-  .nav-list {
-    flex-direction: column;
-  }
-
-  .nav-list-item {
-    margin: 0.6em 0;
-  }
+.article-featured {
+  border-bottom: 1px solid #707070;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
 }
 
-/* .title {
-  font-size: 3.375rem;
-  font-family: "Lora", serif;
-  color: #143774;
-  margin: 0;
-}
-
-.subtitle {
-  font-size: 1rem;
-  font-family: "Ubuntu", sans-serif;
-  color: #1792d2;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.header-title {
-  padding: 3em;
-  text-align: center;
-}
-
-.nav-list {
-  list-style-type: none;
+.article-recent {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 2em;
 }
 
-.nav-list .nav-link {
-  text-decoration: none;
-  color: #707070;
-} */
+/* This code will change the order of the two child element, the .article-recent-secondary will display above the .article-recent-main eventhoug the .article-recent-main is first on markup */
+.article-recent-main {
+  order: 2;
+}
+
+.article-recent-secondary {
+  order: 1;
+}
+
+@media (min-width: 650px) {
+  .article-recent {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .article-recent-main {
+    width: 68%;
+  }
+
+  .article-recent-secondary {
+    width: 30%;
+  }
+
+  .article-featured {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-featured-image {
+    order: -2;
+  }
+
+  .article-info {
+    order: -1;
+  }
+}
+
+/* ==========
+sidebar
+============ */
+
+.sidebar-widget {
+  border: 20px solid #efefef;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+/* ==========
+widget
+============ */
+
+.widget-recent-post {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #707070;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+.widget-recent-post:last-child {
+  border: 0;
+  margin: 0;
+}
+
+.widget-image {
+  order: -1;
+  margin-bottom: 1em;
+}
+
+/* ======================== 
+Footer
+=======================*/
+
+footer {
+  background: #143774;
+  color: white;
+  text-align: center;
+  padding: 3em 0;
+}
